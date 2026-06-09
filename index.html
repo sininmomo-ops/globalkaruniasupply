@@ -155,6 +155,74 @@ footer{background:#0f172a;padding:60px 5% 28px}
 
 
 
+
+/* PRODUCT MODAL */
+.pmodal-bg{position:fixed;inset:0;background:#000c;z-index:500;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s}
+.pmodal-bg.show{opacity:1;pointer-events:all}
+.pmodal{background:#fff;border-radius:20px;width:100%;max-width:960px;max-height:90vh;overflow-y:auto;position:relative}
+.pmodal-close{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e2e8f0;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.pmodal-close h3{font-size:16px;font-weight:700;color:#0f172a}
+.pmodal-close button{background:#f1f5f9;border:none;width:32px;height:32px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.pmodal-body{padding:24px}
+.pmodal-hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px}
+.pmodal-img{border-radius:14px;overflow:hidden;background:#f0f9ff;display:flex;align-items:center;justify-content:center}
+.pmodal-img img{width:100%;height:260px;object-fit:contain;padding:16px}
+.pmodal-tabs{display:flex;gap:0;border-bottom:2px solid #e2e8f0;margin-bottom:20px;overflow-x:auto}
+.ptab{background:none;border:none;padding:10px 18px;font-size:13px;font-weight:600;color:#64748b;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;font-family:Inter,sans-serif}
+.ptab.active{color:#0ea5e9;border-bottom-color:#0ea5e9}
+.pvariant{display:none}
+.pvariant.show{display:block}
+.pspec-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px}
+.pspec-table td{padding:9px 12px;border-bottom:1px solid #e2e8f0}
+.pspec-table tr:nth-child(even) td{background:#f8fafc}
+.pspec-table td:first-child{font-weight:600;color:#0f172a;width:40%}
+.pspec-table td:last-child{color:#475569}
+.pkeunggulan{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.pk-item{display:flex;gap:8px;background:#f8fafc;border-radius:8px;padding:10px;font-size:13px;color:#475569;align-items:flex-start}
+.pk-item::before{content:"✓";width:18px;height:18px;min-width:18px;background:#0ea5e9;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:1px}
+.phasil{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.phasil span{background:#f0f9ff;color:#0369a1;border:1px solid #bae6fd;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500}
+.modal-wa-btn{display:block;text-align:center;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:13px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;margin-top:16px}
+.compare-box{background:#f8fafc;border-radius:12px;padding:16px;margin-bottom:20px}
+.compare-box h4{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:12px;text-align:center}
+.compare-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.compare-col{background:#fff;border:2px solid #e2e8f0;border-radius:10px;padding:12px;text-align:center;cursor:pointer;transition:all .2s}
+.compare-col:hover,.compare-col.active{border-color:#0ea5e9;background:#f0f9ff}
+.compare-col .cn{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:6px}
+.compare-col .cs{font-size:11px;color:#64748b;margin-bottom:3px}
+.compare-col .cv{font-size:14px;font-weight:800;color:#0ea5e9;margin-top:6px}
+.compare-col .cbadge{font-size:10px;background:#0ea5e9;color:#fff;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:6px}
+/* clickable product card */
+.prod-list-item{cursor:pointer}
+.prod-list-item:hover .prod-list-name{color:#0ea5e9}
+@media(max-width:768px){
+  .pmodal-hero{grid-template-columns:1fr}
+  .pkeunggulan{grid-template-columns:1fr}
+  .compare-row{grid-template-columns:1fr}
+}
+
+/* PRODUCT GRID (Audley style) */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pcard{border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;cursor:pointer;transition:all .3s;background:#fff}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 16px 40px #0ea5e920;border-color:#0ea5e9}
+.pcard-img{position:relative;height:220px;overflow:hidden;background:#f0f9ff}
+.pcard-img img{width:100%;height:100%;object-fit:contain;padding:16px;transition:transform .3s}
+.pcard:hover .pcard-img img{transform:scale(1.05)}
+.pcard-badge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,#0ea5e9,#0077B6);color:#fff;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700}
+.pcard-body{padding:18px}
+.pcard-cat{font-size:11px;color:#0ea5e9;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.pcard-name{font-size:16px;font-weight:800;color:#0f172a;margin-bottom:14px;line-height:1.3}
+.pcard-specs{border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:10px 0;margin-bottom:14px}
+.pcard-spec{display:flex;justify-content:space-between;padding:4px 0;font-size:12px}
+.pcard-spec span:first-child{color:#94a3b8;font-weight:500}
+.pcard-spec span:last-child{color:#0f172a;font-weight:600}
+.pcard-footer{display:flex;gap:8px}
+.pcard-inquiry{flex:1;text-align:center;background:#f0f9ff;color:#0ea5e9;border:1px solid #bae6fd;padding:8px;border-radius:8px;font-size:12px;font-weight:600}
+.pcard-wa{flex:1;text-align:center;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:8px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none}
+.pfilter-btn{background:#f1f5f9;border:1px solid #e2e8f0;color:#64748b;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:Inter,sans-serif}
+.pfilter-btn:hover,.pfilter-btn.active{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+@media(max-width:768px){.pgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.pgrid{grid-template-columns:1fr}}
 /* PRODUCT LIST (printmate style) */
 .prod-category{margin-bottom:40px}
 .prod-cat-header{border-bottom:3px solid #0ea5e9;padding-bottom:12px;margin-bottom:20px}
@@ -282,120 +350,394 @@ footer{background:#0f172a;padding:60px 5% 28px}
   <div class="section-inner">
     <div class="text-center">
       <div class="section-tag">Mesin Digital Printing</div>
-      <h2 class="section-title">Mesin Digital Printing Terbaik</h2>
-      <p class="section-sub">Mesin printing & consumable lengkap untuk bisnis digital printing Anda.</p>
+      <h2 class="section-title">Produk Kami</h2>
+      <p class="section-sub">Klik produk untuk melihat detail spesifikasi lengkap. Tersedia mesin & consumable untuk bisnis digital printing Anda.</p>
     </div>
 
-    <!-- Category: Mesin Cetak -->
-    <div class="prod-category">
-      <div class="prod-cat-header">
-        <h3>Mesin Cetak</h3>
-      </div>
-      <div class="prod-list">
-        <div class="prod-list-item">
-          <div class="prod-list-img" style="background:linear-gradient(135deg,#e0f2fe,#bae6fd)">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="14" width="36" height="24" rx="4" fill="#0ea5e9" opacity=".2"/><rect x="10" y="18" width="28" height="16" rx="2" fill="#0ea5e9" opacity=".4"/><rect x="14" y="8" width="20" height="10" rx="2" fill="#0077B6"/><rect x="16" y="34" width="16" height="4" rx="1" fill="#0077B6"/><circle cx="32" cy="26" r="3" fill="#0ea5e9"/></svg>
-          </div>
-          <div class="prod-list-body">
-            <div class="prod-list-top">
-              <div class="prod-list-name">Printer Sublimasi</div>
-              <span class="prod-tag">Best Seller</span>
-            </div>
-            <div class="prod-list-desc">Printer sublimasi untuk cetak kain, jersey, banner, dan media tekstil dengan warna tajam dan tahan lama. Tersedia berbagai ukuran lebar cetak.</div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <a href="printer-sublimasi-audley.html" class="prod-list-cta" style="background:#0f172a;color:#fff">📋 Lihat Detail</a>
-            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Printer%20Sublimasi%20Audley" target="_blank" class="prod-list-cta">💬 Tanya Harga</a>
-          </div>
-          </div>
-        </div>
-        <div class="prod-list-item">
-          <div class="prod-list-img" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8)">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="14" width="36" height="24" rx="4" fill="#e040fb" opacity=".2"/><rect x="10" y="18" width="28" height="16" rx="2" fill="#e040fb" opacity=".4"/><rect x="14" y="8" width="20" height="10" rx="2" fill="#c2185b"/><rect x="16" y="34" width="16" height="4" rx="1" fill="#c2185b"/><circle cx="32" cy="26" r="3" fill="#e040fb"/></svg>
-          </div>
-          <div class="prod-list-body">
-            <div class="prod-list-top">
-              <div class="prod-list-name">Printer DTF</div>
-              <span class="prod-tag" style="background:#fce7f3;color:#c2185b">Hot Deal</span>
-            </div>
-            <div class="prod-list-desc">Direct To Film printer untuk transfer ke berbagai jenis kain. Tidak perlu pretreatment, hasil cetak detail, warna vibrant, dan daya tahan tinggi.</div>
-            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Printer%20DTF" target="_blank" class="prod-list-cta">💬 Tanya Harga</a>
-          </div>
-        </div>
-      </div>
+    <!-- Filter Tabs -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;justify-content:center">
+      <button class="pfilter-btn active" onclick="filterProd('all',this)">Semua</button>
+      <button class="pfilter-btn" onclick="filterProd('mesin-cetak',this)">Mesin Cetak</button>
+      <button class="pfilter-btn" onclick="filterProd('finishing',this)">Mesin Finishing</button>
+      <button class="pfilter-btn" onclick="filterProd('consumable',this)">Consumable</button>
     </div>
 
-    <!-- Category: Mesin Finishing -->
-    <div class="prod-category">
-      <div class="prod-cat-header">
-        <h3>Mesin Finishing</h3>
-      </div>
-      <div class="prod-list">
-        <div class="prod-list-item">
-          <div class="prod-list-img" style="background:linear-gradient(135deg,#fef9c3,#fef08a)">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="24" rx="16" ry="8" fill="#fbbf24" opacity=".3"/><ellipse cx="24" cy="24" rx="16" ry="8" fill="none" stroke="#b45309" stroke-width="2.5"/><ellipse cx="24" cy="20" rx="16" ry="8" fill="#fef08a" stroke="#b45309" stroke-width="2"/><rect x="6" y="20" width="36" height="4" fill="#fbbf24" opacity=".5"/></svg>
+    <div class="pgrid">
+      <!-- Printer Sublimasi -->
+      <div class="pcard" data-cat="mesin-cetak" onclick="openModal('sublim')">
+        <div class="pcard-img">
+          <img src="https://www.audley-printer.com/wp-content/uploads/2024/12/F1904B-Sublimation-Printer.jpg" alt="Printer Sublimasi Audley"/>
+          <div class="pcard-badge">Best Seller</div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">Mesin Cetak</div>
+          <div class="pcard-name">Printer Sublimasi Audley</div>
+          <div class="pcard-specs">
+            <div class="pcard-spec"><span>Printhead</span><span>Epson i3200-A1</span></div>
+            <div class="pcard-spec"><span>Varian</span><span>2 / 4 / 8 Head</span></div>
+            <div class="pcard-spec"><span>Kecepatan</span><span>120 – 480 m²/jam</span></div>
+            <div class="pcard-spec"><span>Garansi</span><span>1 Tahun</span></div>
           </div>
-          <div class="prod-list-body">
-            <div class="prod-list-top">
-              <div class="prod-list-name">Mesin Roll Press</div>
-              <span class="prod-tag" style="background:#fef9c3;color:#b45309">Terlaris</span>
-            </div>
-            <div class="prod-list-desc">Mesin roll press kalor untuk transfer sublimasi ke media kain secara massal. Suhu dan tekanan presisi, hasil transfer merata dan konsisten.</div>
-            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Mesin%20Roll%20Press" target="_blank" class="prod-list-cta">💬 Tanya Harga</a>
+          <div class="pcard-footer">
+            <span class="pcard-inquiry">📋 Lihat Detail</span>
+            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Printer%20Sublimasi%20Audley" target="_blank" class="pcard-wa" onclick="event.stopPropagation()">💬 Inquiry</a>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Category: Consumable -->
-    <div class="prod-category">
-      <div class="prod-cat-header">
-        <h3>Consumable</h3>
+      <!-- Printer DTF -->
+      <div class="pcard" data-cat="mesin-cetak" onclick="openModal('dtf')">
+        <div class="pcard-img">
+          <img src="https://www.audley-printer.com/wp-content/uploads/2024/12/s8074-3-4-head-dtf-printer.jpg" alt="Printer DTF Audley"/>
+          <div class="pcard-badge" style="background:#e040fb">Hot Deal</div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">Mesin Cetak</div>
+          <div class="pcard-name">Printer DTF Audley</div>
+          <div class="pcard-specs">
+            <div class="pcard-spec"><span>Printhead</span><span>Epson i3200-A1</span></div>
+            <div class="pcard-spec"><span>Varian</span><span>2 / 4 / 6 Head</span></div>
+            <div class="pcard-spec"><span>Kecepatan</span><span>30 – 90 m²/jam</span></div>
+            <div class="pcard-spec"><span>Garansi</span><span>1 Tahun</span></div>
+          </div>
+          <div class="pcard-footer">
+            <span class="pcard-inquiry">📋 Lihat Detail</span>
+            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Printer%20DTF%20Audley" target="_blank" class="pcard-wa" onclick="event.stopPropagation()">💬 Inquiry</a>
+          </div>
+        </div>
       </div>
-      <div class="prod-list">
-        <div class="prod-list-item">
-          <div class="prod-list-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0)">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="16" y="8" width="16" height="32" rx="4" fill="#10b981" opacity=".3"/><rect x="18" y="10" width="12" height="28" rx="3" fill="#10b981" opacity=".5"/><rect x="20" y="6" width="8" height="6" rx="2" fill="#059669"/><rect x="21" y="18" width="6" height="2" rx="1" fill="#059669"/><rect x="21" y="22" width="6" height="2" rx="1" fill="#059669"/><rect x="21" y="26" width="6" height="2" rx="1" fill="#059669"/></svg>
+
+      <!-- Mesin Roll Press -->
+      <div class="pcard" data-cat="finishing" onclick="openModal('rollpress')">
+        <div class="pcard-img" style="background:linear-gradient(135deg,#fef9c3,#fde68a);display:flex;align-items:center;justify-content:center">
+          <svg width="140" height="140" viewBox="0 0 140 140">
+            <ellipse cx="70" cy="70" rx="50" ry="22" fill="#fbbf24" opacity=".4"/>
+            <ellipse cx="70" cy="58" rx="50" ry="20" fill="#fef08a" stroke="#b45309" stroke-width="3"/>
+            <rect x="20" y="58" width="100" height="12" fill="#fbbf24" opacity=".6"/>
+            <rect x="16" y="88" width="18" height="30" rx="4" fill="#334155"/>
+            <rect x="106" y="88" width="18" height="30" rx="4" fill="#334155"/>
+            <text x="70" y="45" font-family="Arial Black" font-size="11" fill="#b45309" text-anchor="middle" font-weight="900">ROLL PRESS</text>
+          </svg>
+          <div class="pcard-badge" style="background:#b45309">Terlaris</div>
+        </div>
+        <div class="pcard-body">
+          <div class="pcard-cat">Mesin Finishing</div>
+          <div class="pcard-name">Mesin Roll Press Kalor</div>
+          <div class="pcard-specs">
+            <div class="pcard-spec"><span>Lebar</span><span>1.85 m – 2.2 m</span></div>
+            <div class="pcard-spec"><span>Diameter Drum</span><span>32 cm</span></div>
+            <div class="pcard-spec"><span>Kecepatan</span><span>50–60 m/jam</span></div>
+            <div class="pcard-spec"><span>Garansi</span><span>1 Tahun</span></div>
           </div>
-          <div class="prod-list-body">
-            <div class="prod-list-top">
-              <div class="prod-list-name">Tinta — Sublimasi & DTF</div>
-              <span class="prod-tag" style="background:#f0fdf4;color:#15803d">Stok Tersedia</span>
-            </div>
-            <div class="prod-list-desc">Tinta sublimasi dan DTF berkualitas premium. Warna akurat, vivid, tidak mudah pudar, kompatibel dengan berbagai jenis printer.</div>
-            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Tinta%20Printing" target="_blank" class="prod-list-cta">💬 Tanya Harga</a>
+          <div class="pcard-footer">
+            <span class="pcard-inquiry">📋 Lihat Detail</span>
+            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Mesin%20Roll%20Press" target="_blank" class="pcard-wa" onclick="event.stopPropagation()">💬 Inquiry</a>
           </div>
         </div>
-        <div class="prod-list-item">
-          <div class="prod-list-img" style="background:linear-gradient(135deg,#f5f3ff,#ede9fe)">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="28" rx="3" fill="#a78bfa" opacity=".25"/><rect x="10" y="14" width="28" height="24" rx="2" fill="#a78bfa" opacity=".4"/><rect x="14" y="10" width="20" height="6" rx="2" fill="#7c3aed"/><line x1="14" y1="22" x2="34" y2="22" stroke="#7c3aed" stroke-width="1.5"/><line x1="14" y1="27" x2="34" y2="27" stroke="#7c3aed" stroke-width="1.5"/><line x1="14" y1="32" x2="26" y2="32" stroke="#7c3aed" stroke-width="1.5"/></svg>
-          </div>
-          <div class="prod-list-body">
-            <div class="prod-list-top">
-              <div class="prod-list-name">Sublimation Paper & PET Film</div>
-              <span class="prod-tag" style="background:#f0fdf4;color:#15803d">Stok Tersedia</span>
-            </div>
-            <div class="prod-list-desc">Kertas sublimasi dan PET film DTF berkualitas tinggi. Transfer warna optimal, tidak mudah robek, tersedia roll dan sheet berbagai ukuran.</div>
-            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Paper%20dan%20PET%20Film" target="_blank" class="prod-list-cta">💬 Tanya Harga</a>
-          </div>
+      </div>
+
+      <!-- Tinta -->
+      <div class="pcard" data-cat="consumable" onclick="openModal('consumable')">
+        <div class="pcard-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0);display:flex;align-items:center;justify-content:center;gap:10px">
+          <svg width="60" height="110" viewBox="0 0 60 110"><rect x="15" y="10" width="30" height="80" rx="6" fill="#10b981" opacity=".4"/><rect x="17" y="12" width="26" height="76" rx="5" fill="#10b981" opacity=".5"/><rect x="20" y="6" width="20" height="10" rx="3" fill="#059669"/><rect x="22" y="32" width="16" height="3" rx="1" fill="#059669"/><rect x="22" y="42" width="16" height="3" rx="1" fill="#059669"/><rect x="22" y="52" width="16" height="3" rx="1" fill="#059669"/><text x="30" y="104" font-size="8" fill="#059669" text-anchor="middle" font-weight="700">TINTA</text></svg>
+          <svg width="60" height="110" viewBox="0 0 60 110"><rect x="8" y="16" width="44" height="64" rx="4" fill="#a78bfa" opacity=".4"/><rect x="10" y="18" width="40" height="60" rx="3" fill="#a78bfa" opacity=".5"/><rect x="16" y="10" width="28" height="10" rx="3" fill="#7c3aed"/><text x="30" y="96" font-size="7" fill="#7c3aed" text-anchor="middle" font-weight="700">PAPER/FILM</text></svg>
+          <div class="pcard-badge" style="background:#059669">Stok Ada</div>
         </div>
-        <div class="prod-list-item">
-          <div class="prod-list-img" style="background:linear-gradient(135deg,#fff7ed,#fed7aa)">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><ellipse cx="24" cy="32" rx="14" ry="6" fill="#fb923c" opacity=".3"/><path d="M10 20 Q24 10 38 20 L38 32 Q24 38 10 32 Z" fill="#fed7aa"/><path d="M10 20 Q24 14 38 20" fill="none" stroke="#ea580c" stroke-width="2"/><ellipse cx="24" cy="20" rx="14" ry="5" fill="#fb923c" opacity=".6"/></svg>
+        <div class="pcard-body">
+          <div class="pcard-cat">Consumable</div>
+          <div class="pcard-name">Tinta, Paper, PET Film & Powder DTF</div>
+          <div class="pcard-specs">
+            <div class="pcard-spec"><span>Tinta</span><span>Sublimasi & DTF</span></div>
+            <div class="pcard-spec"><span>Paper</span><span>Sublimation Roll & Sheet</span></div>
+            <div class="pcard-spec"><span>PET Film</span><span>DTF Transparent</span></div>
+            <div class="pcard-spec"><span>Powder</span><span>Hot Melt DTF</span></div>
           </div>
-          <div class="prod-list-body">
-            <div class="prod-list-top">
-              <div class="prod-list-name">Powder DTF</div>
-              <span class="prod-tag" style="background:#f0fdf4;color:#15803d">Stok Tersedia</span>
-            </div>
-            <div class="prod-list-desc">Bubuk adhesive DTF untuk proses hot melt sempurna. Daya rekat kuat, hasil halus, tahan cuci berkali-kali. Tersedia warna putih dan hitam.</div>
-            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Powder%20DTF" target="_blank" class="prod-list-cta">💬 Tanya Harga</a>
+          <div class="pcard-footer">
+            <span class="pcard-inquiry">📋 Lihat Detail</span>
+            <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Consumable" target="_blank" class="pcard-wa" onclick="event.stopPropagation()">💬 Inquiry</a>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
+
+<!-- ============ PRODUCT MODALS ============ -->
+
+<!-- MODAL SUBLIM -->
+<div class="pmodal-bg" id="modal-sublim" onclick="closeModal('sublim')">
+  <div class="pmodal" onclick="event.stopPropagation()">
+    <div class="pmodal-close">
+      <h3>🖨️ Printer Sublimasi Audley</h3>
+      <button onclick="closeModal('sublim')">✕</button>
+    </div>
+    <div class="pmodal-body">
+      <div class="compare-box">
+        <h4>Pilih Varian</h4>
+        <div class="compare-row">
+          <div class="compare-col" id="sc-2" onclick="showVariant('sublim','2')">
+            <div class="cn">2 Head</div>
+            <div class="cs">2x Epson i3200-A1</div>
+            <div class="cs">Lebar: 1.6m / 1.9m</div>
+            <div class="cv">±120 m²/jam</div>
+          </div>
+          <div class="compare-col active" id="sc-4" onclick="showVariant('sublim','4')">
+            <div class="cbadge">⭐ Popular</div>
+            <div class="cn">4 Head</div>
+            <div class="cs">4x Epson i3200-A1</div>
+            <div class="cs">Lebar: 1.9m / 2.2m</div>
+            <div class="cv">±240 m²/jam</div>
+          </div>
+          <div class="compare-col" id="sc-8" onclick="showVariant('sublim','8')">
+            <div class="cn">8 Head</div>
+            <div class="cs">8x Epson i3200-A1</div>
+            <div class="cs">Lebar: 1.9m / 2.2m</div>
+            <div class="cv">±480 m²/jam</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pmodal-hero">
+        <div class="pmodal-img">
+          <img id="sublim-img" src="https://www.audley-printer.com/wp-content/uploads/2024/12/F1904B-Sublimation-Printer.jpg" alt="Printer Sublimasi Audley"/>
+        </div>
+        <div>
+          <div id="sublim-title" style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:8px">Printer Sublimasi Audley 4 Head</div>
+          <div style="font-size:13px;color:#94a3b8;margin-bottom:12px" id="sublim-sku">Model: ADL-F1904 | 4x Epson i3200-A1</div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:14px">● In Stock</div>
+          <div style="background:#f8fafc;border-radius:10px;padding:12px;margin-bottom:14px">
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> GRATIS Test Print</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Garansi Resmi 1 Tahun</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Instalasi & Training di Tempat Anda</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Konsultasi Bisnis GRATIS</div>
+          </div>
+          <a id="sublim-wa" href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Printer%20Sublimasi%20Audley%204%20Head" target="_blank" class="modal-wa-btn">💬 Tanya Harga via WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Variant: 2 head -->
+      <div class="pvariant" id="sv-2">
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a">Spesifikasi — 2 Head</h4>
+        <table class="pspec-table"><tbody>
+          <tr><td>Model</td><td>Audley F1902 / ADL-1902</td></tr>
+          <tr><td>Printhead</td><td>2x Epson i3200-A1</td></tr>
+          <tr><td>Lebar Cetak</td><td>1.6 m / 1.9 m</td></tr>
+          <tr><td>Kecepatan Draft</td><td>±120 m²/jam</td></tr>
+          <tr><td>Kecepatan Produksi</td><td>±60 m²/jam</td></tr>
+          <tr><td>Resolusi</td><td>360–3200 DPI</td></tr>
+          <tr><td>Tinta</td><td>CMYK Sublimasi</td></tr>
+          <tr><td>Software</td><td>FlexiPrint / Maintop</td></tr>
+          <tr><td>Listrik</td><td>210–230V, 50/60Hz</td></tr>
+          <tr><td>Garansi</td><td>1 Tahun</td></tr>
+        </tbody></table>
+        <h4 style="font-size:15px;font-weight:700;margin:16px 0 10px;color:#0f172a">Produk yang Bisa Dihasilkan</h4>
+        <div class="phasil"><span>Jersey Olahraga</span><span>Hijab</span><span>Gamis</span><span>Kaos</span><span>Legging</span><span>Spanduk</span><span>Apron</span><span>Kain Roll</span></div>
+      </div>
+
+      <!-- Variant: 4 head -->
+      <div class="pvariant show" id="sv-4">
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a">Spesifikasi — 4 Head</h4>
+        <table class="pspec-table"><tbody>
+          <tr><td>Model</td><td>Audley F1904B / ADL-F1904</td></tr>
+          <tr><td>Printhead</td><td>4x Epson i3200-A1</td></tr>
+          <tr><td>Lebar Cetak</td><td>1.9 m / 2.2 m</td></tr>
+          <tr><td>Kecepatan Draft</td><td>±240 m²/jam</td></tr>
+          <tr><td>Kecepatan Produksi</td><td>±120 m²/jam</td></tr>
+          <tr><td>Resolusi</td><td>360–3200 DPI</td></tr>
+          <tr><td>Tinta</td><td>CMYK Sublimasi</td></tr>
+          <tr><td>Software</td><td>FlexiPrint / Maintop</td></tr>
+          <tr><td>Listrik</td><td>210–230V, 50/60Hz</td></tr>
+          <tr><td>Garansi</td><td>1 Tahun</td></tr>
+        </tbody></table>
+        <h4 style="font-size:15px;font-weight:700;margin:16px 0 10px;color:#0f172a">Produk yang Bisa Dihasilkan</h4>
+        <div class="phasil"><span>Jersey Olahraga</span><span>Hijab</span><span>Gamis</span><span>Kaos</span><span>Legging</span><span>Spanduk</span><span>Apron</span><span>Kain Roll</span><span>Baju Renang</span><span>Merchandise</span></div>
+      </div>
+
+      <!-- Variant: 8 head -->
+      <div class="pvariant" id="sv-8">
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a">Spesifikasi — 8 Head</h4>
+        <table class="pspec-table"><tbody>
+          <tr><td>Model</td><td>Audley ADL-2208 / F1908</td></tr>
+          <tr><td>Printhead</td><td>8x Epson i3200-A1</td></tr>
+          <tr><td>Lebar Cetak</td><td>1.9 m / 2.2 m</td></tr>
+          <tr><td>Kecepatan Draft</td><td>±480 m²/jam</td></tr>
+          <tr><td>Kecepatan Produksi</td><td>±240 m²/jam</td></tr>
+          <tr><td>Resolusi</td><td>360–3200 DPI</td></tr>
+          <tr><td>Tinta</td><td>CMYK Sublimasi</td></tr>
+          <tr><td>Ink Tank</td><td>Kapasitas besar + alarm otomatis</td></tr>
+          <tr><td>Software</td><td>FlexiPrint / Maintop</td></tr>
+          <tr><td>Listrik</td><td>210–230V, 50/60Hz</td></tr>
+          <tr><td>Garansi</td><td>1 Tahun</td></tr>
+        </tbody></table>
+        <h4 style="font-size:15px;font-weight:700;margin:16px 0 10px;color:#0f172a">Produk yang Bisa Dihasilkan</h4>
+        <div class="phasil"><span>Jersey Massal</span><span>Hijab</span><span>Gamis</span><span>Kaos</span><span>Legging</span><span>Spanduk Besar</span><span>Kain Roll Industri</span><span>Produksi 24 Jam</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DTF -->
+<div class="pmodal-bg" id="modal-dtf" onclick="closeModal('dtf')">
+  <div class="pmodal" onclick="event.stopPropagation()">
+    <div class="pmodal-close">
+      <h3>🎨 Printer DTF Audley</h3>
+      <button onclick="closeModal('dtf')">✕</button>
+    </div>
+    <div class="pmodal-body">
+      <div class="compare-box">
+        <h4>Pilih Varian</h4>
+        <div class="compare-row">
+          <div class="compare-col active" id="dc-2" onclick="showVariant('dtf','2')">
+            <div class="cbadge">Entry</div>
+            <div class="cn">2 Head</div>
+            <div class="cs">2x Epson i3200-A1</div>
+            <div class="cs">Lebar: 60 cm</div>
+            <div class="cv">±30 m²/jam</div>
+          </div>
+          <div class="compare-col" id="dc-4" onclick="showVariant('dtf','4')">
+            <div class="cbadge" style="background:#e040fb">Popular</div>
+            <div class="cn">4 Head</div>
+            <div class="cs">4x Epson i3200-A1</div>
+            <div class="cs">Lebar: 60 cm</div>
+            <div class="cv">±60 m²/jam</div>
+          </div>
+          <div class="compare-col" id="dc-6" onclick="showVariant('dtf','6')">
+            <div class="cn">6 Head</div>
+            <div class="cs">6x Epson i3200-A1</div>
+            <div class="cs">Lebar: 60 cm</div>
+            <div class="cv">±90 m²/jam</div>
+          </div>
+        </div>
+      </div>
+      <div class="pmodal-hero">
+        <div class="pmodal-img">
+          <img id="dtf-img" src="https://www.audley-printer.com/wp-content/uploads/2024/12/s7070-3-2-head-dtf-printer.jpg" alt="Printer DTF Audley"/>
+        </div>
+        <div>
+          <div id="dtf-title" style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:8px">Printer DTF Audley 2 Head</div>
+          <div style="font-size:13px;color:#94a3b8;margin-bottom:12px" id="dtf-sku">Model: S7070-3 | 2x Epson i3200-A1</div>
+          <div style="display:inline-flex;align-items:center;gap:6px;background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:14px">● In Stock</div>
+          <div style="background:#f8fafc;border-radius:10px;padding:12px;margin-bottom:14px">
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Transfer ke SEMUA jenis kain</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Tidak perlu pretreatment</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Include powder shaker</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Garansi Resmi 1 Tahun</div>
+          </div>
+          <a id="dtf-wa" href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Printer%20DTF%20Audley%202%20Head" target="_blank" class="modal-wa-btn">💬 Tanya Harga via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="pvariant show" id="dv-2">
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a">Spesifikasi — DTF 2 Head</h4>
+        <table class="pspec-table"><tbody>
+          <tr><td>Model</td><td>Audley S7070-3</td></tr>
+          <tr><td>Printhead</td><td>2x Epson i3200-A1</td></tr>
+          <tr><td>Lebar Cetak</td><td>60 cm</td></tr>
+          <tr><td>Kecepatan</td><td>±30 m²/jam</td></tr>
+          <tr><td>Resolusi</td><td>1200–2400 DPI</td></tr>
+          <tr><td>Tinta</td><td>CMYK + White</td></tr>
+          <tr><td>Include</td><td>Powder Shaker + Smoke Filter</td></tr>
+          <tr><td>Listrik</td><td>210–230V, 50/60Hz</td></tr>
+          <tr><td>Garansi</td><td>1 Tahun</td></tr>
+        </tbody></table>
+        <h4 style="font-size:15px;font-weight:700;margin:16px 0 10px;color:#0f172a">Produk yang Bisa Dihasilkan</h4>
+        <div class="phasil"><span>Kaos Katun</span><span>Hoodie</span><span>Jaket</span><span>Topi</span><span>Tas</span><span>Sepatu</span><span>Celana</span><span>Seragam</span></div>
+      </div>
+
+      <div class="pvariant" id="dv-4">
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a">Spesifikasi — DTF 4 Head</h4>
+        <table class="pspec-table"><tbody>
+          <tr><td>Model</td><td>Audley S8074-3</td></tr>
+          <tr><td>Printhead</td><td>4x Epson i3200-A1</td></tr>
+          <tr><td>Lebar Cetak</td><td>60 cm</td></tr>
+          <tr><td>Kecepatan</td><td>±60 m²/jam</td></tr>
+          <tr><td>Resolusi</td><td>1200–2400 DPI</td></tr>
+          <tr><td>Tinta</td><td>CMYK + White</td></tr>
+          <tr><td>Include</td><td>Powder Shaker + Smoke Filter</td></tr>
+          <tr><td>Listrik</td><td>210–230V, 50/60Hz</td></tr>
+          <tr><td>Garansi</td><td>1 Tahun</td></tr>
+        </tbody></table>
+        <h4 style="font-size:15px;font-weight:700;margin:16px 0 10px;color:#0f172a">Produk yang Bisa Dihasilkan</h4>
+        <div class="phasil"><span>Kaos Katun</span><span>Hoodie</span><span>Jaket</span><span>Topi</span><span>Tas</span><span>Sepatu</span><span>Celana</span><span>Seragam</span><span>Produksi Massal</span></div>
+      </div>
+
+      <div class="pvariant" id="dv-6">
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a">Spesifikasi — DTF 6 Head</h4>
+        <table class="pspec-table"><tbody>
+          <tr><td>Model</td><td>Audley ADL-6 Head DTF</td></tr>
+          <tr><td>Printhead</td><td>6x Epson i3200-A1</td></tr>
+          <tr><td>Lebar Cetak</td><td>60 cm</td></tr>
+          <tr><td>Kecepatan</td><td>±90 m²/jam</td></tr>
+          <tr><td>Resolusi</td><td>1200–2400 DPI</td></tr>
+          <tr><td>Tinta</td><td>CMYK + White</td></tr>
+          <tr><td>Include</td><td>Powder Shaker + Smoke Filter</td></tr>
+          <tr><td>Listrik</td><td>210–230V, 50/60Hz</td></tr>
+          <tr><td>Garansi</td><td>1 Tahun</td></tr>
+        </tbody></table>
+        <h4 style="font-size:15px;font-weight:700;margin:16px 0 10px;color:#0f172a">Produk yang Bisa Dihasilkan</h4>
+        <div class="phasil"><span>Kaos Katun</span><span>Hoodie</span><span>Jaket</span><span>Topi</span><span>Tas</span><span>Sepatu</span><span>Produksi Industri</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ROLL PRESS -->
+<div class="pmodal-bg" id="modal-rollpress" onclick="closeModal('rollpress')">
+  <div class="pmodal" onclick="event.stopPropagation()">
+    <div class="pmodal-close">
+      <h3>🔄 Mesin Roll Press</h3>
+      <button onclick="closeModal('rollpress')">✕</button>
+    </div>
+    <div class="pmodal-body">
+      <div class="pmodal-hero">
+        <div class="pmodal-img" style="background:#fef9c3">
+          <svg width="120" height="120" viewBox="0 0 120 120"><ellipse cx="60" cy="60" rx="44" ry="20" fill="#fbbf24" opacity=".4"/><ellipse cx="60" cy="50" rx="44" ry="18" fill="#fef08a" stroke="#b45309" stroke-width="3"/><rect x="16" y="50" width="88" height="10" fill="#fbbf24" opacity=".5"/><rect x="10" y="80" width="16" height="28" rx="3" fill="#334155"/><rect x="94" y="80" width="16" height="28" rx="3" fill="#334155"/></svg>
+        </div>
+        <div>
+          <div style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:8px">Mesin Roll Press Kalor</div>
+          <div style="font-size:13px;color:#94a3b8;margin-bottom:16px">Untuk transfer sublimasi ke kain massal</div>
+          <div style="background:#f8fafc;border-radius:10px;padding:12px;margin-bottom:14px">
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Suhu & tekanan presisi</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Hasil transfer merata & konsisten</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Cocok produksi massal</div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 0;font-size:13px;color:#475569"><span style="color:#0ea5e9;font-weight:700">✓</span> Garansi Resmi</div>
+          </div>
+          <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20Mesin%20Roll%20Press" target="_blank" class="modal-wa-btn">💬 Tanya Harga via WhatsApp</a>
+        </div>
+      </div>
+      <h4 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#0f172a">Spesifikasi</h4>
+      <table class="pspec-table"><tbody>
+        <tr><td>Lebar Transfer</td><td>1.85 m – 2.2 m</td></tr>
+        <tr><td>Diameter Drum</td><td>32 cm</td></tr>
+        <tr><td>Kecepatan</td><td>50–60 m/jam</td></tr>
+        <tr><td>Daya Listrik</td><td>13 KW</td></tr>
+        <tr><td>Voltase</td><td>380 V</td></tr>
+        <tr><td>Garansi</td><td>1 Tahun</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL CONSUMABLE -->
+<div class="pmodal-bg" id="modal-consumable" onclick="closeModal('consumable')">
+  <div class="pmodal" onclick="event.stopPropagation()">
+    <div class="pmodal-close">
+      <h3>🧴 Consumable</h3>
+      <button onclick="closeModal('consumable')">✕</button>
+    </div>
+    <div class="pmodal-body">
+      <div class="pkeunggulan">
+        <div class="pk-item"><strong>Tinta Sublimasi</strong> — CMYK, kompatibel dengan Audley, Epson, dll. Warna vivid, tahan lama.</div>
+        <div class="pk-item"><strong>Tinta DTF</strong> — CMYK + White, daya rekat tinggi, hasil halus dan tahan cuci.</div>
+        <div class="pk-item"><strong>Sublimation Paper</strong> — Transfer rate tinggi, tidak mudah robek, tersedia roll & sheet.</div>
+        <div class="pk-item"><strong>PET Film DTF</strong> — Transparan, kuat, transfer warna optimal untuk semua kain.</div>
+        <div class="pk-item"><strong>Powder DTF</strong> — Hot melt adhesive, daya rekat kuat, tahan cuci puluhan kali.</div>
+        <div class="pk-item"><strong>Stok Selalu Tersedia</strong> — Pengiriman cepat ke seluruh Indonesia.</div>
+      </div>
+      <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20saya%20ingin%20info%20harga%20consumable" target="_blank" class="modal-wa-btn">💬 Tanya Harga & Ketersediaan Stok</a>
+    </div>
+  </div>
+</div>
 
 <!-- SERVICES -->
 <section id="services" class="services-bg">
@@ -702,6 +1044,73 @@ document.querySelector('.nav-hamburger').addEventListener('click', () => {
     links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:#fff;padding:20px;border-bottom:1px solid #e2e8f0;z-index:99;gap:16px';
   }
 });
+
+function openModal(id) {
+  document.getElementById('modal-'+id).classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id) {
+  document.getElementById('modal-'+id).classList.remove('show');
+  document.body.style.overflow='';
+}
+function showVariant(prod, v) {
+  // hide all variants
+  document.querySelectorAll('[id^="'+prod[0]+'v-"]').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('[id^="'+prod[0]+'c-"]').forEach(el => el.classList.remove('active'));
+  document.getElementById(prod[0]+'v-'+v).classList.add('show');
+  document.getElementById(prod[0]+'c-'+v).classList.add('active');
+  // update image and title
+  const imgs = {
+    'sublim-2': 'https://www.audley-printer.com/wp-content/uploads/2024/12/F1904B-Sublimation-Printer.jpg',
+    'sublim-4': 'https://www.audley-printer.com/wp-content/uploads/2024/12/F1904B-Sublimation-Printer.jpg',
+    'sublim-8': 'https://www.audley-printer.com/wp-content/uploads/2025/02/audley-2208-sublimation-printing-machine.jpg',
+    'dtf-2': 'https://www.audley-printer.com/wp-content/uploads/2024/12/s7070-3-2-head-dtf-printer.jpg',
+    'dtf-4': 'https://www.audley-printer.com/wp-content/uploads/2024/12/s8074-3-4-head-dtf-printer.jpg',
+    'dtf-6': 'https://www.audley-printer.com/wp-content/uploads/2024/12/s8074-3-4-head-dtf-printer.jpg',
+  };
+  const titles = {
+    'sublim-2': 'Printer Sublimasi Audley 2 Head',
+    'sublim-4': 'Printer Sublimasi Audley 4 Head',
+    'sublim-8': 'Printer Sublimasi Audley 8 Head',
+    'dtf-2': 'Printer DTF Audley 2 Head',
+    'dtf-4': 'Printer DTF Audley 4 Head',
+    'dtf-6': 'Printer DTF Audley 6 Head',
+  };
+  const skus = {
+    'sublim-2': 'Model: ADL-F1902 | 2x Epson i3200-A1',
+    'sublim-4': 'Model: ADL-F1904B | 4x Epson i3200-A1',
+    'sublim-8': 'Model: ADL-2208 | 8x Epson i3200-A1',
+    'dtf-2': 'Model: S7070-3 | 2x Epson i3200-A1',
+    'dtf-4': 'Model: S8074-3 | 4x Epson i3200-A1',
+    'dtf-6': 'Model: ADL-6H | 6x Epson i3200-A1',
+  };
+  const was = {
+    'sublim-2': 'Printer%20Sublimasi%20Audley%202%20Head',
+    'sublim-4': 'Printer%20Sublimasi%20Audley%204%20Head',
+    'sublim-8': 'Printer%20Sublimasi%20Audley%208%20Head',
+    'dtf-2': 'Printer%20DTF%20Audley%202%20Head',
+    'dtf-4': 'Printer%20DTF%20Audley%204%20Head',
+    'dtf-6': 'Printer%20DTF%20Audley%206%20Head',
+  };
+  const key = prod+'-'+v;
+  if(document.getElementById(prod+'-img')) document.getElementById(prod+'-img').src = imgs[key]||'';
+  if(document.getElementById(prod+'-title')) document.getElementById(prod+'-title').textContent = titles[key]||'';
+  if(document.getElementById(prod+'-sku')) document.getElementById(prod+'-sku').textContent = skus[key]||'';
+  if(document.getElementById(prod+'-wa')) document.getElementById(prod+'-wa').href = 'https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20'+(was[key]||'');
+}
+function filterProd(cat, btn) {
+  document.querySelectorAll('.pfilter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pcard').forEach(card => {
+    if(cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+document.addEventListener('keydown', e => { if(e.key==='Escape') document.querySelectorAll('.pmodal-bg.show').forEach(m=>m.classList.remove('show')); });
 
 function toggleAcc(btn) {
   const item = btn.closest('.acc-item');
