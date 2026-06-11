@@ -53,6 +53,19 @@ tr:nth-child(even) td{background:#f8fafc}
 footer{background:#0f172a;padding:20px 5%;text-align:center}
 footer p{font-size:13px;color:#475569}
 @media(max-width:768px){.nav-links{display:none}.art-hero h1{font-size:22px}}
+.nav-hamburger{display:none;background:none;border:none;font-size:22px;cursor:pointer;padding:4px 8px}
+@media(max-width:768px){.nav-hamburger{display:block;color:#0f172a}}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;bottom:0;background:#fff;z-index:99;padding:24px 5%;overflow-y:auto;border-top:1px solid #e2e8f0}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;margin-bottom:24px}
+.mobile-menu ul li{border-bottom:1px solid #f1f5f9}
+.mobile-menu ul li a{display:block;padding:16px 0;font-size:16px;font-weight:600;color:#0f172a;text-decoration:none}
+.mobile-menu ul li a:hover{color:#0ea5e9}
+.mobile-menu .mobile-cta{display:block;background:linear-gradient(135deg,#0ea5e9,#0077B6);color:#fff;text-align:center;padding:14px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none}
+.breadcrumb{max-width:900px;margin:0 auto;padding:82px 5% 14px;font-size:13px;color:#94a3b8}
+.breadcrumb a{color:#0ea5e9;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span{margin:0 6px}
 
 .art-hero-img{width:100%;max-height:420px;object-fit:cover;border-radius:0}
 .art-hero-img-wrap{overflow:hidden;max-height:420px;position:relative}
@@ -78,8 +91,26 @@ footer p{font-size:13px;color:#475569}
       <li><a href="index.html#contact">Kontak</a></li>
     </ul>
     <a href="https://wa.me/6285353907408" class="nav-cta" target="_blank">💬 Konsultasi Gratis</a>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+ <ul>
+  <li><a href="index.html" onclick="closeMobileMenu()">🏠 Home</a></li>
+  <li><a href="index.html#products" onclick="closeMobileMenu()">🖨️ Mesin</a></li>
+  <li><a href="supplies.html" onclick="closeMobileMenu()">📦 Supplies</a></li>
+  <li><a href="blog.html" onclick="closeMobileMenu()">📝 Blog</a></li>
+  <li><a href="index.html#contact" onclick="closeMobileMenu()">📞 Kontak</a></li>
+ </ul>
+ <a href="https://wa.me/6285353907408" class="mobile-cta" target="_blank">💬 Konsultasi Gratis via WhatsApp</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+ <a href="index.html">Home</a><span>›</span><a href="blog.html">Blog</a><span>›</span><span style="color:#0f172a;font-weight:600">Sublimasi vs DTF</span>
+</div>
 <div class="art-hero">
   <div class="art-cat">🖨️ Edukasi Mesin</div>
   <h1>Perbedaan Printer Sublimasi vs Printer DTF — Mana yang Cocok untuk Bisnis Anda?</h1>
@@ -147,5 +178,21 @@ footer p{font-size:13px;color:#475569}
   </div>
 </div>
 <footer><p>© 2026 <span style="color:#00B4D8;font-weight:700">GLOBAL</span> <span style="color:#E040FB;font-weight:700">KARUNIA</span> <span style="color:#FFD600;font-weight:700">SUPPLY</span> — Digital Printing Distributor</p></footer>
+<script>
+function toggleMobileMenu() {
+ const menu = document.getElementById("mobileMenu");
+ const btn = document.getElementById("hamburger");
+ menu.classList.toggle("open");
+ btn.classList.toggle("open");
+ btn.textContent = menu.classList.contains("open") ? "✕" : "☰";
+}
+function closeMobileMenu() {
+ const menu = document.getElementById("mobileMenu");
+ const btn = document.getElementById("hamburger");
+ menu.classList.remove("open");
+ btn.classList.remove("open");
+ btn.textContent = "☰";
+}
+</script>
 </body>
 </html>
