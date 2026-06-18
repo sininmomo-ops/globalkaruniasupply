@@ -333,6 +333,19 @@ footer{background:#0f172a;padding:60px 5% 28px}
 .prod-list-cta{display:inline-block;background:linear-gradient(135deg,#0ea5e9,#0077B6);color:#fff;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s}
 .prod-list-cta:hover{opacity:.85;transform:translateY(-1px)}
 @media(max-width:768px){.prod-list-item{flex-direction:column}.prod-list-img{width:60px;height:60px}}
+/* SUPPLY GRID */
+.supply-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.supply-card{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;text-decoration:none;transition:all .3s}
+.supply-card:hover{border-color:#0ea5e9;box-shadow:0 6px 24px #0ea5e915;transform:translateY(-3px)}
+.supply-bar{height:5px}
+.supply-body{padding:20px 18px 18px}
+.supply-icon{font-size:26px;margin-bottom:10px}
+.supply-name{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:6px}
+.supply-desc{font-size:12px;color:#64748b;line-height:1.5;margin-bottom:10px;min-height:54px}
+.supply-link{font-size:12px;font-weight:700;color:#0ea5e9}
+.supply-cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+@media(max-width:768px){.supply-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.supply-grid{grid-template-columns:1fr}}
 /* ACCORDION */
 .accordion{max-width:800px;margin:0 auto}
 .acc-item{border:1px solid #e2e8f0;border-radius:12px;margin-bottom:10px;overflow:hidden;transition:all .2s}
@@ -538,16 +551,44 @@ footer{background:#0f172a;padding:60px 5% 28px}
  </div>
 
  <div class="prod-category">
- <div    <div class="prod-category">
       <div class="prod-cat-header"><h3>Supplies &amp; Consumable</h3></div>
-      <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #bbf7d0;border-radius:14px;padding:28px;text-align:center">
-        <div style="font-size:40px;margin-bottom:12px">🧴</div>
-        <div style="font-size:18px;font-weight:700;color:#0f172a;margin-bottom:8px">Tinta, Paper, PET Film &amp; Powder DTF</div>
-        <div style="font-size:14px;color:#475569;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Supplies lengkap untuk bisnis digital printing Anda. Tinta sublimasi &amp; DTF, sublimation paper, PET film, dan powder DTF — stok selalu tersedia.</div>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-          <a href="supplies.html" style="background:linear-gradient(135deg,#0ea5e9,#0077B6);color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none">📋 Lihat Semua Supplies →</a>
-          <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20supplies" target="_blank" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none">💬 Tanya Harga</a>
-        </div>
+      <div class="supply-grid">
+        <a href="supplies.html" class="supply-card">
+          <div class="supply-bar" style="background:#00B4D8"></div>
+          <div class="supply-body">
+            <div class="supply-name">Tinta DTF &amp; Sublimasi</div>
+            <div class="supply-desc">Tinta original, warna tajam dan tahan lama untuk hasil cetak maksimal.</div>
+            <div class="supply-link">Lihat Pilihan →</div>
+          </div>
+        </a>
+        <a href="paper-sublimasi.html" class="supply-card">
+          <div class="supply-bar" style="background:#E040FB"></div>
+          <div class="supply-body">
+            <div class="supply-name">Sublimation Paper</div>
+            <div class="supply-desc">Daya serap tinta optimal, hasil transfer rapi tanpa bleeding.</div>
+            <div class="supply-link">Lihat Detail →</div>
+          </div>
+        </a>
+        <a href="pet-film-dtf.html" class="supply-card">
+          <div class="supply-bar" style="background:#FFD600"></div>
+          <div class="supply-body">
+            <div class="supply-name">PET Film DTF</div>
+            <div class="supply-desc">Lapisan film berkualitas untuk proses transfer DTF yang presisi.</div>
+            <div class="supply-link">Lihat Detail →</div>
+          </div>
+        </a>
+        <a href="powder-dtf.html" class="supply-card">
+          <div class="supply-bar" style="background:#0f172a"></div>
+          <div class="supply-body">
+            <div class="supply-name">Powder DTF</div>
+            <div class="supply-desc">Daya rekat kuat ke berbagai jenis kain, hasil cetak awet meski sering dicuci.</div>
+            <div class="supply-link">Lihat Detail →</div>
+          </div>
+        </a>
+      </div>
+      <div class="supply-cta-row">
+        <a href="supplies.html" style="background:linear-gradient(135deg,#0ea5e9,#0077B6);color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none">📋 Lihat Semua Supplies →</a>
+        <a href="https://wa.me/6285353907408?text=Halo%20GKS%2C%20info%20supplies" target="_blank" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none">💬 Tanya Harga</a>
       </div>
     </div>
 
