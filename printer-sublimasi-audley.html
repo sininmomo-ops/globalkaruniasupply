@@ -97,8 +97,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#ffffffee;backdro
 footer{background:#0f172a;padding:24px 5%;text-align:center}
 footer p{font-size:13px;color:#475569}
 .wa-float{position:fixed;bottom:24px;right:24px;z-index:200;background:#25D366;color:#fff;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:23px;text-decoration:none;box-shadow:0 4px 20px #25D36660}
+.nav-hamburger{display:none;background:none;border:none;font-size:22px;cursor:pointer;padding:4px 8px}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;bottom:0;background:#fff;z-index:99;padding:24px 5%;overflow-y:auto;border-top:1px solid #e2e8f0}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;margin-bottom:24px}
+.mobile-menu ul li{border-bottom:1px solid #f1f5f9}
+.mobile-menu ul li a{display:block;padding:16px 0;font-size:16px;font-weight:600;color:#0f172a;text-decoration:none}
+.mobile-menu ul li a:hover{color:#0ea5e9}
+.mobile-menu .mobile-cta{display:block;background:linear-gradient(135deg,#0ea5e9,#0077B6);color:#fff;text-align:center;padding:14px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none}
 @media(max-width:768px){
   .nav-links{display:none}
+  .nav-hamburger{display:block;color:#0f172a}
   .prod-hero{grid-template-columns:1fr}
   .keunggulan-grid,.compare-grid{grid-template-columns:1fr}
   .hasil-grid{grid-template-columns:repeat(2,1fr)}
@@ -120,14 +129,32 @@ footer p{font-size:13px;color:#475569}
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#home">Home</a></li>
-      <li><a href="index.html#products">Produk</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#products" style="color:#0ea5e9">Produk</a></li>
+      <li><a href="index.html#services">Layanan</a></li>
+      <li><a href="supplies.html">Supplies</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="index.html#about">Tentang</a></li>
       <li><a href="index.html#contact">Kontak</a></li>
     </ul>
     <a href="https://wa.me/6285353907408" class="nav-cta" target="_blank">💬 Konsultasi Gratis</a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+ <ul>
+  <li><a href="index.html" onclick="closeMobileMenu()">🏠 Home</a></li>
+  <li><a href="index.html#products" onclick="closeMobileMenu()">🖨️ Produk</a></li>
+  <li><a href="index.html#services" onclick="closeMobileMenu()">⚙️ Layanan</a></li>
+  <li><a href="supplies.html" onclick="closeMobileMenu()">📦 Supplies</a></li>
+  <li><a href="blog.html" onclick="closeMobileMenu()">📝 Blog</a></li>
+  <li><a href="index.html#about" onclick="closeMobileMenu()">ℹ️ Tentang</a></li>
+  <li><a href="index.html#contact" onclick="closeMobileMenu()">📞 Kontak</a></li>
+ </ul>
+ <a href="https://wa.me/6285353907408" class="mobile-cta" target="_blank">💬 Konsultasi Gratis via WhatsApp</a>
+</div>
 
 <div class="breadcrumb">
   <a href="index.html">Home</a><span>›</span>
@@ -562,6 +589,21 @@ function sendWA() {
     'Kebutuhan: ' + kebutuhan
   );
   window.open('https://wa.me/6285353907408?text=' + msg, '_blank');
+}
+
+function toggleMobileMenu() {
+ const menu = document.getElementById('mobileMenu');
+ const btn = document.getElementById('hamburger');
+ menu.classList.toggle('open');
+ btn.classList.toggle('open');
+ btn.textContent = menu.classList.contains('open') ? '✕' : '☰';
+}
+function closeMobileMenu() {
+ const menu = document.getElementById('mobileMenu');
+ const btn = document.getElementById('hamburger');
+ menu.classList.remove('open');
+ btn.classList.remove('open');
+ btn.textContent = '☰';
 }
 </script>
 </body>
